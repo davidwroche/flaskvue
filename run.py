@@ -1,8 +1,14 @@
 from flask import Flask, render_template, jsonify
+from flask_cors import CORS
 from random import *
+import requests
+
 app = Flask(__name__,
             static_folder = "./dist/static",
             template_folder = "./dist")
+
+CORS(app)
+
 
 @app.route('/api/random')
 def random_number():
